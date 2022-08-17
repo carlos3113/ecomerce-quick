@@ -6,9 +6,22 @@ use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+use App\Http\Controllers\ContactanosController;
+
+
+/* RUTA WELCOME */
+Route::get('/', [ContactanosController::class, 'index'])->name('/');
+// Ruta para el envio de email
+Route::post('/', [ContactanosController::class, 'store'])->name('/');
+
+
+/* Route::get('/home', 'HomeController@index')
+    ->middleware('auth')
+    ->name('home'); */
+
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware('auth');
 
 Route::get('/register', [RegisterController::class, 'create'])
     ->middleware('guest')
@@ -37,3 +50,8 @@ Route::get('/admin', [AdminController::class, 'index'])
 
 
 Route::get('users/create',[UserController::class,'create']);
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

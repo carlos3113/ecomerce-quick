@@ -1,52 +1,54 @@
 @extends('layouts.app')
 
-@section('title', 'Register')
-
 @section('content')
+ {{-- Bootstrap --}}
+<div class="container contenedor-login rounded-3 bg-white
+rounded-lg shadow-form mx-auto col-lg-4 pt-4 pb-5 px-4">
 
-
-<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200
-rounded-lg shadow-lg">
-
-  <h1 class="text-3xl text-center font-bold">Registro</h1>
+  <h1 class="text-center fw-bold fs-2 pb-2">Registro</h1>
 
   <form class="mt-4" method="POST" action="">
     @csrf
 
-    <input type="text" class="border border-gray-200 rounded-md bg-gray-200 w-full
-    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Nombre"
-    id="name" name="name">
+    <div class="form-group mb-4">
+        <input type="text" class="form-control inputs" placeholder="Nombre"
+        id="name" name="name">
+    </div>
 
     @error('name')
       <p class="border border-red-500 rounded-md bg-red-100 w-full
       text-red-600 p-2 my-2">* {{ $message }}</p>
     @enderror
 
-    <input type="email" class="border border-gray-200 rounded-md bg-gray-200 w-full
-    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Email"
-    id="email" name="email">
+    <div class="form-group mb-4">
+        <input type="email" class="form-control inputs" placeholder="Email"
+        id="email" name="email">
+    </div>
 
     @error('email')
       <p class="border border-red-500 rounded-md bg-red-100 w-full
       text-red-600 p-2 my-2">* {{ $message }}</p>
     @enderror
 
-    <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full
-    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Contraseña"
-    id="password" name="password">
+    <div class="form-group mb-4">
+        <input type="password" class="form-control inputs" placeholder="Contraseña"
+        id="password" name="password">
+    </div>
 
     @error('password')
       <p class="border border-red-500 rounded-md bg-red-100 w-full
       text-red-600 p-2 my-2">* {{ $message }}</p>
     @enderror
 
-    <input type="password" class="border border-gray-200 rounded-md bg-gray-200
-    w-full text-lg placeholder-gray-900 p-2 my-2 focus:bg-white"
-    placeholder="Confirme la contraseña" id="password_confirmation"
-    name="password_confirmation">
+    <div class="form-group mb-4">
+        <input type="password" class="form-control inputs"
+        placeholder="Confirme la contraseña" id="password_confirmation"
+        name="password_confirmation">
+    </div>
 
-    <button type="submit" class="rounded-md bg-indigo-500 w-full text-lg
-    text-white font-semibold p-2 my-3 hover:bg-indigo-600">Enviar</button>
+    <button type="submit" class="btn-login w-100 text-white fw-bolder rounded-3 py-2">
+        Registrarse
+    </button>
 
 
   </form>

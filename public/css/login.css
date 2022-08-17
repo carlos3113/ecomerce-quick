@@ -1,0 +1,30 @@
+.contenedor-login {
+    margin-top: 10rem;
+    background-color: rgb(243, 244, 246) !important;
+}
+
+.shadow-form {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+h1 {
+    font-size: 50rem;
+    color: #303030;
+}
+.inputs {
+    height: 2.7rem;
+    background-color: rgb(240, 240, 240) !important;
+}
+.inputs::placeholder {
+    color: rgb(126, 125, 125) !important;
+}
+.btn-login {
+    background-color: rgb(99, 102, 241);
+    transition: all .3s ease-in-out;
+    font-size: 1.2rem;
+    border: none;
+}
+.btn-login:hover {
+    background-color: rgb(75, 78, 247);
+    transition: all .3s ease-in-out;
+}

@@ -1,0 +1,52 @@
+:root {
+    --primary-color: #3b82f6;
+    --primary-color-dark: #2877f5;
+}
+
+.logo {
+    width: 111px;
+    height: 36px;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.h2-title {
+    color: var(--primary-color);
+}
+
+.shadow-text {
+    text-shadow: 1px 1px 10px #000;
+}
+
+.bg-hr {
+    background-color: var(--primary-color);
+    height: 1px;
+}
+
+.btn-contact {
+    background-color: var(--primary-color);
+    transition: all .3s ease-in-out;
+}
+.btn-contact:hover {
+    background-color: var(--primary-color-dark);
+    transition: all .3s ease-in-out;
+}
+
+/* .fondo-contactanos {
+    background-image: url('../img/welcome/contacto-2.jpg');
+    background-size: contain;
+} */
+
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.icons i {
+    margin: 0 2% 0 2%;
+}
+.icons a {
+    text-decoration: none;
+}

@@ -1,35 +1,40 @@
 @extends('layouts.app')
 
-@section('title', 'Login')
-
 @section('content')
+ {{-- Bootstrap --}}
+<div class="container contenedor-login rounded-3 bg-white
+rounded-lg shadow-form mx-auto col-lg-4 pb-5 pt-4 px-4">
 
-<div class="block mx-auto my-12 p-8 bg-white w-1/3 border border-gray-200
-rounded-lg shadow-lg">
+<h1 class="text-center fw-bold fs-2 pb-2">Iniciar Sesión</h1>
 
-  <h1 class="text-3xl text-center font-bold">Iniciar Sesión</h1>
+<form class="mt-4" method="POST" action="{{-- {{ route('login') }} --}}">
+@csrf
 
-  <form class="mt-4" method="POST" action="">
-    @csrf
-
-    <input type="email" class="border border-gray-200 rounded-md bg-gray-200 w-full
-    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Correo Electrónico"
+<div class="form-group mb-4">
+    <input type="email" class="form-control inputs" placeholder="Correo Electrónico"
     id="email" name="email">
+</div>
 
-    <input type="password" class="border border-gray-200 rounded-md bg-gray-200 w-full
-    text-lg placeholder-gray-900 p-2 my-2 focus:bg-white" placeholder="Contraseña"
+<div class="form-group mb-4">
+    <input type="password" class="form-control inputs" placeholder="Contraseña"
     id="password" name="password">
+</div>
 
-    @error('message')
-      <p class="border border-red-500 rounded-md bg-red-100 w-full
-      text-red-600 p-2 my-2">* {{ $message }}</p>
-    @enderror
+@error('message')
+  <p class="border border-red-500 rounded-md bg-red-100 w-full
+  text-red-600 p-2 my-2">* {{ $message }}</p>
+@enderror
 
-    <button type="submit" class="rounded-md bg-indigo-500 w-full text-lg
-    text-white font-semibold p-2 my-3 hover:bg-indigo-600">Enviar</button>
+<div class="form-group">
+    <button type="submit"
+            class="btn-login w-100 text-white fw-bolder rounded-3 py-2"
+    >
+        Ingresar
+    </button>
+</div>
 
 
-  </form>
+</form>
 
 
 </div>
